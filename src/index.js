@@ -1,10 +1,8 @@
 class Sorter {
   constructor() {
     this.array = [];
-    this.compare = function compareNumbers(a, b) {
-      return a - b;
+    this.compare = (a, b) => a - b;
     };
-  }
 
   add(element) {
     this.array.push(element);
@@ -23,14 +21,14 @@ class Sorter {
   }
 
   sort(indices) {
-    var ar2 = [];
+    let arrSort = [];
     indices.sort();
-      for (var i = 0; i < indices.length; i++) {
-        ar2.push(this.array[indices[i]]);
+      for (let i = 0; i < indices.length; i++) {
+        arrSort.push(this.array[indices[i]]);
       }
-      ar2.sort(this.compare);
-      for (var j = 0; j < indices.length; j++) {
-       this.array.splice(indices[j], 1, ar2[j]);
+      arrSort.sort(this.compare);
+      for (let j = 0; j < indices.length; j++) {
+       this.array.splice(indices[j], 1, arrSort[j]);
       }
     return this.array;
   }
